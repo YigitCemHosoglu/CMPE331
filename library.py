@@ -2,6 +2,8 @@
     Stage: Development-01
     @author: Arda Çelik, 119202051
     @author: Yiğit Cem Hoşoğlu, 120202046 
+    @author: Burak Seymen , 117202076
+    @author : Gökay Tan , 122202114
 """
 
 import tkinter as library
@@ -39,7 +41,7 @@ class LoginWindow:
         self.btn02 = library.Button(text="Forgot Password")
         self.btn03 = library.Button(text="Cancel")
 
-
+        
         self.btn01.bind("<Button-1>", self.handle_click)
         self.btn02.bind("<Button-2>", self.handle_click)
         self.btn03.bind("<Button-3>", self.handle_click)
@@ -69,9 +71,13 @@ class LoginWindow:
         :param event: action event for detecting which button is clicked
     """
     def handle_click(self, event):
+        # does not check for the other buttons
         if event.widget == self.btn01: 
             if self.txt01.get() == "test" and self.txt02.get() == 'test123': 
                 
+                # should dispose of the login window
+                # login button can create multiple new tab windows
+
                 self.window01 = library.Tk()
                 self.window01.title("New Tab")
                 
